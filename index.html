@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SPARTAN AIRSOFT TEAM</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#050505;
+
+    color:white;
+
+    font-family:'Oswald', sans-serif;
+
+    overflow-x:hidden;
+
+    position:relative;
+}
+
+/* FUNDO */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.93), rgba(0,0,0,0.97)),
+    url('logo.png');
+
+    background-size:cover;
+
+    background-position:center;
+
+    opacity:0.12;
+
+    z-index:-3;
+}
+
+/* EFEITO MILITAR */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        rgba(255,0,0,0.03),
+        rgba(255,0,0,0.03) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+
+    z-index:-2;
+}
+
+/* HEADER */
+
+.topo{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-bottom:2px solid #8b0000;
+}
+
+/* LOGO */
+
+.logo{
+
+    width:320px;
+
+    max-width:90%;
+
+    margin-bottom:35px;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 0 12px rgba(255,0,0,0.8))
+    drop-shadow(0 0 40px rgba(255,0,0,0.5));
+
+    animation:pulse 3s infinite;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* TITULO */
+
+h1{
+
+    font-size:85px;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.2),
+    0 0 25px rgba(255,0,0,0.5);
+
+    margin-bottom:20px;
+}
+
+/* SUB */
+
+.sub{
+
+    font-size:30px;
+
+    color:#9d9d9d;
+
+    letter-spacing:4px;
+
+    margin-bottom:40px;
+}
+
+/* BOTÃO */
+
+.btn{
+
+    display:inline-block;
+
+    padding:20px 50px;
+
+    background:#8b0000;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    border:2px solid #ff2d2d;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,0.3);
+}
+
+.btn:hover{
+
+    background:#b10000;
+
+    transform:translateY(-5px) scale(1.03);
+
+    box-shadow:
+    0 0 35px rgba(255,0,0,0.5);
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:80px 0;
+}
+
+/* CARDS */
+
+.card{
+
+    background:rgba(10,10,10,0.94);
+
+    border-left:5px solid #8b0000;
+
+    border-radius:15px;
+
+    padding:45px;
+
+    margin-bottom:40px;
+
+    box-shadow:
+    0 0 30px rgba(255,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 0 40px rgba(255,0,0,0.2);
+}
+
+/* TITULO CARD */
+
+.card h2{
+
+    color:#ff4444;
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+    letter-spacing:3px;
+}
+
+/* TEXTO */
+
+.card p{
+
+    color:#d0d0d0;
+
+    font-size:22px;
+
+    line-height:1.9;
+}
+
+/* LISTA */
+
+ul{
+
+    padding-left:25px;
+}
+
+li{
+
+    margin-bottom:18px;
+
+    color:#d0d0d0;
+
+    font-size:22px;
+
+    line-height:1.8;
+}
+
+/* FRASE */
+
+.frase{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:#ff3b3b;
+
+    text-shadow:
+    0 0 20px rgba(255,0,0,0.5);
+
+    padding:20px;
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#020202;
+
+    border-top:2px solid #8b0000;
+
+    text-align:center;
+
+    padding:40px 20px;
+}
+
+footer p{
+
+    color:#777;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    h1{
+        font-size:45px;
+    }
+
+    .sub{
+        font-size:18px;
+    }
+
+    .logo{
+        width:220px;
+    }
+
+    .btn{
+        width:100%;
+        font-size:20px;
+    }
+
+    .card{
+        padding:30px;
+    }
+
+    .card h2{
+        font-size:30px;
+    }
+
+    .card p,
+    li{
+        font-size:18px;
+    }
+
+    .frase{
+        font-size:28px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOPO -->
+
+<section class="topo">
+
+<img src="logo.png" class="logo" alt="SPARTAN AIRSOFT TEAM">
+
+<h1>SPARTAN AIRSOFT TEAM</h1>
+
+<div class="sub">
+MILSIM • FÁTIMA DO SUL - MS
+</div>
+
+<a
+class="btn"
+href="https://instagram.com/spartanairsoftteam556"
+target="_blank">
+
+INSTAGRAM OFICIAL
+
+</a>
+
+</section>
+
+<!-- CONTEÚDO -->
+
+<div class="container">
+
+<!-- SOBRE -->
+
+<div class="card">
+
+<h2>SOBRE A EQUIPE</h2>
+
+<p>
+
+O SPARTAN AIRSOFT TEAM é uma equipe privada especializada na modalidade MILSIM,
+fundada em Fátima do Sul - MS pelo comandante Rogerio Santos Costa,
+ex militar do Exército Brasileiro.
+
+</p>
+
+<p style="margin-top:25px;">
+
+O grupo foi criado com base em valores como honra,
+disciplina, lealdade, fraternidade,
+companheirismo e respeito.
+
+</p>
+
+</div>
+
+<!-- MISSÃO -->
+
+<div class="card">
+
+<h2>MISSÃO</h2>
+
+<p>
+
+Promover o Airsoft MILSIM na região,
+desenvolvendo operadores preparados,
+disciplinados e comprometidos com a segurança,
+imersão militar e espírito de equipe.
+
+</p>
+
+</div>
+
+<!-- VALORES -->
+
+<div class="card">
+
+<h2>VALORES SPARTAN</h2>
+
+<ul>
+
+<li>⚔ Honra</li>
+
+<li>⚔ Disciplina</li>
+
+<li>⚔ Lealdade</li>
+
+<li>⚔ Fraternidade</li>
+
+<li>⚔ Respeito</li>
+
+<li>⚔ Companheirismo</li>
+
+</ul>
+
+</div>
+
+<!-- RECRUTAMENTO -->
+
+<div class="card">
+
+<h2>RECRUTAMENTO</h2>
+
+<ul>
+
+<li>✔ Maior de 18 anos</li>
+
+<li>✔ Boa conduta perante a sociedade</li>
+
+<li>✔ Sem antecedentes criminais</li>
+
+<li>✔ Participar do período de avaliação</li>
+
+<li>✔ Uso obrigatório de equipamentos de segurança</li>
+
+<li>✔ Respeito à hierarquia da equipe</li>
+
+</ul>
+
+</div>
+
+<!-- LOADOUT -->
+
+<div class="card">
+
+<h2>LOADOUT OFICIAL</h2>
+
+<ul>
+
+<li>🎖 Combat Shirt Multicam</li>
+
+<li>🎖 Calça Multicam</li>
+
+<li>🎖 Equipamentos TAN</li>
+
+<li>🎖 Rádio BAOFENG recomendado</li>
+
+<li>🎖 Máscara facial obrigatória</li>
+
+<li>🎖 Óculos de proteção obrigatório</li>
+
+</ul>
+
+</div>
+
+<!-- CLASSES -->
+
+<div class="card">
+
+<h2>CLASSES OPERACIONAIS</h2>
+
+<ul>
+
+<li>⚔ ASSAULT</li>
+
+<li>🎯 DMR</li>
+
+<li>🪖 SNIPER</li>
+
+<li>💥 SUPORT / LMG</li>
+
+</ul>
+
+</div>
+
+<!-- SEGURANÇA -->
+
+<div class="card">
+
+<h2>SEGURANÇA</h2>
+
+<ul>
+
+<li>✔ Proibido retirar os óculos em campo</li>
+
+<li>✔ Proibido disparos na Safe Zone</li>
+
+<li>✔ Uso obrigatório de máscara facial</li>
+
+<li>✔ Segurança sempre em primeiro lugar</li>
+
+<li>✔ Respeito às regras da AMMS</li>
+
+</ul>
+
+</div>
+
+<!-- FILOSOFIA -->
+
+<div class="card">
+
+<h2>FILOSOFIA SPARTAN</h2>
+
+<div class="frase">
+
+“DEUS ACIMA DE TUDO E TODOS”
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RODAPÉ -->
+
+<footer>
+
+<p>
+SPARTAN AIRSOFT TEAM © 2026
+</p>
+
+<p style="margin-top:10px;">
+FÁTIMA DO SUL - MS
+</p>
+
+</footer>
+
+</body>
+</html>
